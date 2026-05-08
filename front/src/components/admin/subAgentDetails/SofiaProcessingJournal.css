@@ -1,0 +1,348 @@
+/* ========================================
+   Sofia Processing Journal - Enhanced Styles
+   ======================================== */
+
+/* Shimmer Animation for Sofia Card */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Pulse Animation for Thinking Dots */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Glow Animation for Progress Bar */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(13, 147, 148, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(13, 147, 148, 0.8);
+  }
+}
+
+/* Rotate Animation for Loading Icons */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Slide In from Bottom */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Gradient Shift for Text */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Breathing Animation */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* ========================================
+   Sofia Processing Journal Classes
+   ======================================== */
+
+.sofia-thinking-card {
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(13, 147, 148, 0.08) 0%, rgba(13, 147, 148, 0.02) 100%);
+  border: 1px solid rgba(13, 147, 148, 0.15);
+  padding: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(13, 147, 148, 0.12);
+  animation: scaleIn 0.5s ease-out;
+}
+
+.sofia-avatar-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(13, 147, 148, 0.1) 0%, rgba(13, 147, 148, 0.05) 100%);
+  border: 2px solid rgba(13, 147, 148, 0.2);
+  box-shadow: 0 4px 20px rgba(13, 147, 148, 0.15);
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.sofia-thinking-dots {
+  display: flex;
+  gap: 6px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.sofia-thinking-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0d9394;
+}
+
+.sofia-thinking-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.sofia-thinking-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.sofia-gradient-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0d9394 0%, #0a7273 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.sofia-animated-gradient-text {
+  background: linear-gradient(90deg, #0d9394 0%, #10b8b9 50%, #0d9394 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+.sofia-progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgba(13, 147, 148, 0.1);
+  overflow: hidden;
+}
+
+.sofia-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #0d9394 0%, #10b8b9 100%);
+  transition: width 0.5s ease;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.sofia-summary-card {
+  flex: 1 1 200px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  animation: slideInFromBottom 0.5s ease-out;
+}
+
+.sofia-summary-card-blue {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.02) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.sofia-summary-card-green {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.02) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.sofia-summary-card-red {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 100%);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.sofia-batch-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.sofia-batch-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.sofia-timeline-line {
+  position: absolute;
+  left: 17px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background-color: #e5e7eb;
+}
+
+.sofia-timeline-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  transition: all 0.3s ease;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.sofia-timeline-dot:hover {
+  transform: scale(1.1);
+}
+
+.sofia-status-chip {
+  height: 22px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.sofia-status-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .sofia-thinking-card {
+    padding: 16px;
+  }
+
+  .sofia-avatar-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sofia-gradient-text {
+    font-size: 0.95rem;
+  }
+
+  .sofia-summary-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+  .sofia-thinking-card,
+  .sofia-batch-card {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .sofia-avatar-container,
+  .sofia-thinking-dots {
+    display: none;
+  }
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .sofia-thinking-card,
+  .sofia-batch-card {
+    border: 2px solid #000;
+  }
+
+  .sofia-status-chip {
+    border: 1px solid #000;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .sofia-thinking-card {
+    background: linear-gradient(135deg, rgba(13, 147, 148, 0.15) 0%, rgba(13, 147, 148, 0.05) 100%);
+    border-color: rgba(13, 147, 148, 0.3);
+  }
+
+  .sofia-batch-card {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+
+  .sofia-timeline-line {
+    background-color: #374151;
+  }
+}
+
