@@ -1,0 +1,7 @@
+.ripple-grid-container {
+  width: 200%;
+  height: 200%;
+  position: relative;
+  overflow: hidden;
+  margin-left: -30%;
+}

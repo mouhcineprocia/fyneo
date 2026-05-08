@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* Class-based dark mode — .dark on <html> triggers these overrides */
+:root {
+  --bg: #ffffff;
+  --bg2: #ffffff;
+  --card: rgba(255, 255, 255, 0.82);
+  --card-b: rgba(195, 205, 225, 0.75);
+  --shadow: 0 2px 16px rgba(15, 20, 50, 0.08), 0 1px 4px rgba(15, 20, 50, 0.04);
+  --inner: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  --border: rgba(0, 0, 0, 0.10);
+  --header: rgba(255, 255, 255, 0.92);
+  --text: #0f1117;
+  --text2: #4b5068;
+  --text3: #8b90a4;
+  --primary: #0d9394;
+  --primaryH: #0d9394;
+  --primaryL: rgba(89, 140, 96, 0.12);
+  --primaryB: rgba(89, 140, 96, 0.30);
+  --success: #16a34a;
+  --successL: rgba(22, 163, 74, 0.12);
+  --warn: #d97706;
+  --warnL: rgba(217, 119, 6, 0.12);
+  --danger: #dc2626;
+  --dangerL: rgba(220, 38, 38, 0.12);
+  --info: #2563eb;
+  --infoL: rgba(37, 99, 235, 0.12);
+}
+
+html.dark {
+  --bg: #0b0b0e;
+  --bg2: #121215;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-b: rgba(255, 255, 255, 0.12);
+  --shadow: 0 8px 40px rgba(0, 0, 0, 0.70), 0 2px 8px rgba(0, 0, 0, 0.40);
+  --inner: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.09);
+  --header: rgba(11, 11, 14, 0.92);
+  --text: #e5e5ea;
+  --text2: #8a8a9e;
+  --text3: #484858;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter, system-ui, sans-serif);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter, 'Inter', system-ui, sans-serif);
+  font-size: 13px;
+  line-height: 1.55;
+  transition: background 0.20s ease, color 0.15s ease;
+}
+
+/* ─── Liquid Glass Card ────────────────────────────────────────────────────── */
+.my-glass-card {
+  background: var(--bg);
+  border: 1px solid var(--bg);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card {
+  background: var(--card);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--card-b);
+  border-radius: 4px;
+  box-shadow: var(--shadow), var(--inner);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(148deg, rgba(255, 255, 255, 0.07) 0%, transparent 60%);
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+/* ─── Hide scrollbar helper ────────────────────────────────────────────────── */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Custom scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+
+/* ─── Table reset ──────────────────────────────────────────────────────────── */
+table { border-collapse: collapse; width: 100%; }
